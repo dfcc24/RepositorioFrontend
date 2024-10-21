@@ -1,0 +1,69 @@
+/* src/components/email.css */
+.email-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .email-input, .email-textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+  }
+  
+  .email-textarea {
+    height: 150px;
+  }
+  
+  .email-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .email-button:hover {
+    background-color: #2980b9;
+  }
+  .custom-text {
+    font-style: italic;
+    font-weight: bold;
+    color: orange;
+  }
+  .text-card-alternative {
+    background: #5e5b5b; /* Fondo blanco */
+    border: 2px solid #dcdcdc; /* Borde gris claro */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    margin: 20px; /* Margen externo */
+    transition: background-color 0.3s ease; /* Transición para el fondo */
+    text-align: center; /* Centrar el texto */
+    width: auto;
+    height: 150px;
+  }
+  
+  .text-card-alternative:hover {
+    background: linear-gradient(180deg, #363535, #727070); /* Efecto de hover: de blanco a gris claro */
+  }
+  
+  .custom-text-alternative {
+    font-style: italic; /* Letra cursiva */
+    font-weight: bold; /* Negrilla */
+    color: rgb(238, 186, 89); /* Color del texto */
+    font-size: 1.2rem; /* Tamaño de letra mayor */
+    line-height: 1.5;
+    text-align: center;
+    /* Espaciado entre líneas */
+  }
+  

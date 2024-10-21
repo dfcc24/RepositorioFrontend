@@ -1,0 +1,83 @@
+/* Estilos para el navbar */
+.navbar {
+  position: fixed;
+  top: 25%; /* Posicionar verticalmente en el centro */
+  left: 50%; /* Posicionar horizontalmente en el centro */
+  
+  left: -450px; /* Inicialmente está fuera de la pantalla */
+  width: 150px;
+  height: 60vh;
+  background-color: #f7f3f3;
+  color: #090a0a;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  transition: left 0.3s ease-in-out; /* Animación de deslizamiento */
+  z-index: 10;
+}
+
+.navbar.visible {
+  left: 0; /* Muestra el menú al acercar el cursor */
+}
+
+/* Contenedor flotante para el logo y el título */
+.navbar-card {
+  background-color: #34495e;
+  padding: 1px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra flotante */
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 30px;
+}
+
+.navbar-card:hover {
+  background-color: #e74c3c; /* Cambio de color al pasar el mouse */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumentar sombra */
+}
+
+.navbar-logo {
+  width: 50px; /* Tamaño de la imagen (favicon) */
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.navbar-title {
+  font-size: 1.2rem;
+  color: #ecf0f1;
+  margin: 0;
+}
+
+/* Links del navbar */
+.navbar-links a {
+  color: #0a0347;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  display: block;
+}
+
+.navbar-links a:hover {
+  color: #e74c3c; /* Cambia de color al pasar el mouse */
+}
+
+/* Estilo especial para el botón de admin */
+.admin-button {
+  background-color: #e98708;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.admin-button:hover {
+  background-color: #c0392b;
+}
+
+/* Ajuste del body cuando el menú está visible */
+.navbar-visible {
+  margin-left: 300px; /* Empuja el contenido principal hacia la derecha cuando el menú está visible */
+}
