@@ -17,10 +17,10 @@ const LandingPage = () => {
     const fetchData = async () => {
       try {
         const [projectResponse, experienceData, socialMediaData, tecnoResponse] = await Promise.all([
-          fetch('http://localhost:5000/api/projects').then(res => res.json()),
+          fetch('https://repositoriobackend.onrender.com/api/projects').then(res => res.json()),
           getExperiences(),
           getSocialMedia(),
-          fetch('http://localhost:5000/api/tecnos').then(res => res.json())
+          fetch('https://repositoriobackend.onrender.com/api/tecnos').then(res => res.json())
         ]);
 
         setProyectos(projectResponse);

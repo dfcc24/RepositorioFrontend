@@ -1,7 +1,7 @@
 // src/services/api.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api'; // Cambia esto a tu URL de backend
+const API_URL = 'https://repositoriobackend.onrender.com/api'; // Cambia esto a tu URL de backend
 
 // Función para iniciar sesión
 export const login = async (username, password) => {

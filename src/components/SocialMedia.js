@@ -13,7 +13,7 @@ const SocialMedia = () => {
     useEffect(() => {
         const fetchSocialMedia = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/social-media');
+                const response = await axios.get('https://repositoriobackend.onrender.com/api/social-media');
                 setSocials(response.data);
             } catch (error) {
                 console.error('Error fetching social media:', error);
@@ -31,13 +31,13 @@ const SocialMedia = () => {
             formData.append('file', file); // Asegúrate de que también estés enviando el archivo
 
             // Subir los archivos a Cloudinary
-            const uploadResponse = await axios.post('http://localhost:5000/api/social-media/files/upload', formData, {
+            const uploadResponse = await axios.post('https://repositoriobackend.onrender.com/api/social-media/files/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
 
-            const createdSocial = await axios.post('http://localhost:5000/api/social-media', {
+            const createdSocial = await axios.post('https://repositoriobackend.onrender.com/api/social-media', {
                 name: newSocial.name,   // El nombre
                 url: newSocial.url,     // La URL (esto podría ser el link)
                 icon: uploadResponse.data.iconUrl, // Usar la URL del ícono
@@ -66,7 +66,7 @@ const SocialMedia = () => {
             if (iconFile) {
                 const formData = new FormData();
                 formData.append('icon', iconFile);
-                const iconResponse = await axios.post('http://localhost:5000/api/social-media/files/upload', formData, {
+                const iconResponse = await axios.post('https://repositoriobackend.onrender.com/api/social-media/files/upload', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -74,7 +74,7 @@ const SocialMedia = () => {
                 iconUrl = iconResponse.data.iconUrl; // Usar la nueva URL
             }
 
-            const updatedSocial = await axios.put(`http://localhost:5000/api/social-media/${editingSocial._id}`, {
+            const updatedSocial = await axios.put(`https://repositoriobackend.onrender.com/api/social-media/${editingSocial._id}`, {
                 name: newSocial.name,
                 url: newSocial.url,
                 icon: iconUrl,
@@ -94,7 +94,7 @@ const SocialMedia = () => {
     // Manejar la eliminación de una red social
     const handleDeleteSocial = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/social-media/${id}`);
+            await axios.delete(`https://repositoriobackend.onrender.com/api/social-media/${id}`);
             setSocials(socials.filter(social => social._id !== id));
         } catch (error) {
             console.error('Error deleting social media:', error);

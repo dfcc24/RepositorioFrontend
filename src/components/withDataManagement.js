@@ -11,7 +11,7 @@ const withDataManagement = (dataType) => (WrappedComponent) => {
         // Función para obtener datos
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/${dataType}`);
+                const response = await axios.get(`https://repositoriobackend.onrender.com/api/${dataType}`);
                 setData(response.data);
             } catch (error) {
                 console.error(`Error fetching ${dataType}:`, error);
@@ -25,7 +25,7 @@ const withDataManagement = (dataType) => (WrappedComponent) => {
         // Función para agregar un nuevo dato
         const addData = async (newData) => {
             try {
-                await axios.post(`http://localhost:5000/api/${dataType}`, newData);
+                await axios.post(`https://repositoriobackend.onrender.com/api/${dataType}`, newData);
                 fetchData(); // Actualizar los datos
             } catch (error) {
                 console.error(`Error adding ${dataType}:`, error);
@@ -35,7 +35,7 @@ const withDataManagement = (dataType) => (WrappedComponent) => {
         // Función para editar un dato
         const editData = async (updatedData) => {
             try {
-                await axios.put(`http://localhost:5000/api/${dataType}/${editId}`, updatedData);
+                await axios.put(`https://repositoriobackend.onrender.com/api/${dataType}/${editId}`, updatedData);
                 fetchData(); // Actualizar los datos
                 setIsEditing(false);
                 setEditId(null);
@@ -47,7 +47,7 @@ const withDataManagement = (dataType) => (WrappedComponent) => {
         // Función para eliminar un dato
         const deleteData = async (id) => {
             try {
-                await axios.delete(`http://localhost:5000/api/${dataType}/${id}`);
+                await axios.delete(`https://repositoriobackend.onrender.com/api/${dataType}/${id}`);
                 fetchData(); // Actualizar los datos
             } catch (error) {
                 console.error(`Error deleting ${dataType}:`, error);

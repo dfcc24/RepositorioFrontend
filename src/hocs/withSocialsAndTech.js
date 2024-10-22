@@ -12,8 +12,8 @@ const withSocialsAndTech = (WrappedComponent) => {
       const fetchData = async () => {
         try {
           const [socialResponse, techResponse] = await Promise.all([
-            axios.get('http://localhost:5000/api/social-media'),
-            axios.get('http://localhost:5000/api/technologies'),
+            axios.get('https://repositoriobackend.onrender.com/api/social-media'),
+            axios.get('https://repositoriobackend.onrender.com/api/technologies'),
           ]);
 
           setSocials(socialResponse.data);

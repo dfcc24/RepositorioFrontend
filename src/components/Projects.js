@@ -12,7 +12,7 @@ const Projects = () => {
     // Función para obtener los proyectos
     const fetchProjects = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/projects');
+            const response = await axios.get('https://repositoriobackend.onrender.com/api/projects');
             setProjects(response.data);
         } catch (error) {
             console.error('Error fetching projects:', error);
@@ -39,7 +39,7 @@ const Projects = () => {
         const uploadPromises = imageFiles.map(file => {
             const formData = new FormData();
             formData.append('file', file);
-            return axios.post('http://localhost:5000/api/projects/files/upload', formData, {
+            return axios.post('https://repositoriobackend.onrender.com/api/projects/files/upload', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
         });
@@ -64,9 +64,9 @@ const Projects = () => {
             };
 
             if (isEditing) {
-                await axios.put(`http://localhost:5000/api/projects/${editProjectId}`, projectPayload);
+                await axios.put(`https://repositoriobackend.onrender.com/api/projects/${editProjectId}`, projectPayload);
             } else {
-                await axios.post('http://localhost:5000/api/projects', projectPayload);
+                await axios.post('https://repositoriobackend.onrender.com/api/projects', projectPayload);
             }
 
             // Limpiar campos
@@ -90,7 +90,7 @@ const Projects = () => {
     // Manejar la eliminación de un proyecto
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/projects/${id}`);
+            await axios.delete(`https://repositoriobackend.onrender.com/api/projects/${id}`);
             fetchProjects(); // Actualizar la lista de proyectos
         } catch (error) {
             console.error('Error deleting project:', error);

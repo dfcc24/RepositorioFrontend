@@ -1,7 +1,7 @@
 // src/services/dashboardApi.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api'; // Cambia esto a tu URL de backend
+const API_URL = 'https://repositoriobackend.onrender.com/api'; // Cambia esto a tu URL de backend
 
 // Funciones para proyectos
 export const getProjects = async () => {
@@ -89,7 +89,7 @@ export const deleteSection = async (id) => {
 // Función para obtener redes sociales
 export const getSocialMedia = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/social-media');
+      const response = await axios.get('https://repositoriobackend.onrender.com/api/social-media');
       return response.data;
     } catch (error) {
       console.error('Error al obtener redes sociales:', error);

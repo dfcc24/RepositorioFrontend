@@ -12,7 +12,7 @@ const Tecnos = () => {
     // Función para obtener las tecnologías
     const fetchTecnologias = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/tecnos');
+            const response = await axios.get('https://repositoriobackend.onrender.com/api/tecnos');
             setTecnos(response.data);
         } catch (error) {
             console.error('Error fetching technologies:', error);
@@ -39,7 +39,7 @@ const Tecnos = () => {
         const uploadPromises = imageFiles.map(file => {
             const formData = new FormData();
             formData.append('file', file);
-            return axios.post('http://localhost:5000/api/tecnos/files/upload', formData, {
+            return axios.post('https://repositoriobackend.onrender.com/api/tecnos/files/upload', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
         });
@@ -64,9 +64,9 @@ const Tecnos = () => {
             };
 
             if (isEditing) {
-                await axios.put(`http://localhost:5000/api/tecnos/${editTecnoId}`, tecnoPayload);
+                await axios.put(`https://repositoriobackend.onrender.com/api/tecnos/${editTecnoId}`, tecnoPayload);
             } else {
-                await axios.post('http://localhost:5000/api/tecnos', tecnoPayload);
+                await axios.post('https://repositoriobackend.onrender.com/api/tecnos', tecnoPayload);
             }
 
             // Limpiar campos
@@ -90,7 +90,7 @@ const Tecnos = () => {
     // Manejar la eliminación de una tecnología
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/tecnos/${id}`);
+            await axios.delete(`https://repositoriobackend.onrender.com/api/tecnos/${id}`);
             fetchTecnologias(); // Actualizar la lista de tecnologías
         } catch (error) {
             console.error('Error deleting technology:', error);
